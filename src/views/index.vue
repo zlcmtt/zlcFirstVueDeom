@@ -40,7 +40,7 @@ export default {
   computed: {
     ...mapState(['author']),
     defaultActive() {
-      return this.$route.path;
+      return `/${this.$route.path.split('/').splice(1, 3).join('/')}`;
     },
   },
   created() {
@@ -73,5 +73,6 @@ export default {
     color: #333;
     text-align: center;
     line-height: 160px;
+    overflow: auto;
   }
 </style>

@@ -28,6 +28,23 @@ const routes = [
             component: () => import('../views/shijuan/daitishen'),
             title: '待提审试卷',
             author: [50, 51],
+            meta: {
+              keepAlive: true,
+            },
+            children: [
+              {
+                path: '/index/shijuan/daitishen/listDetails',
+                name: 'listDetails',
+                component: () => import('../views/shijuan/child/listDetails'),
+                children: [
+                  {
+                    path: '/index/shijuan/daitishen/listDetails/details',
+                    name: 'details',
+                    component: () => import('../views/shijuan/child/details'),
+                  },
+                ],
+              },
+            ],
           },
           {
             path: '/index/shijuan/shenhezhong',
