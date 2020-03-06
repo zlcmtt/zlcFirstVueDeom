@@ -10,7 +10,7 @@
               <template slot="title">{{item.title}}</template>
               <div v-for="routerItem in item.children" :key="routerItem.name">
                 <el-menu-item
-                   v-if="routerItem.authoclsr.includes(Number(author))"
+                   v-if="routerItem.author.includes(Number(author))"
                    :index="routerItem.path">
                   {{routerItem.title}}
                 </el-menu-item>
