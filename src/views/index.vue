@@ -20,7 +20,7 @@
         </el-menu>
       </el-aside>
       <el-main>
-        <router-view></router-view>
+          <router-view></router-view>
       </el-main>
     </el-container>
   </el-container>
@@ -38,7 +38,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['author']),
+    ...mapState(['author', 'keepAliveArr']),
     defaultActive() {
       return `/${this.$route.path.split('/').splice(1, 3).join('/')}`;
     },

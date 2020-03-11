@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 // eslint-disable-next-line import/extensions
 import Login from '../views/Login';
+import store from '../store/index';
 
 Vue.use(VueRouter);
 const routes = [
@@ -18,33 +19,26 @@ const routes = [
       {
         path: '/index/shijuan',
         name: 'shijuan',
-        component: () => import('../views/shijuan/index'),
+        component: () => import('../views/shijuan/indexs'),
         title: '试卷管理',
         author: [50, 51],
         children: [
           {
-            path: '/index/shijuan/daitishen',
             name: 'daitishen',
+            path: '/index/shijuan/daitishen',
             component: () => import('../views/shijuan/daitishen'),
             title: '待提审试卷',
             author: [50, 51],
             meta: {
               keepAlive: true,
             },
-            children: [
-              {
-                path: '/index/shijuan/daitishen/listDetails',
-                name: 'listDetails',
-                component: () => import('../views/shijuan/child/listDetails'),
-                children: [
-                  {
-                    path: '/index/shijuan/daitishen/listDetails/details',
-                    name: 'details',
-                    component: () => import('../views/shijuan/child/details'),
-                  },
-                ],
-              },
-            ],
+          },
+          {
+            path: '/index/shijuan/daitishen/:id',
+            name: 'details',
+            component: () => import('../views/shijuan/child/details'),
+            title: '详情',
+            author: [],
           },
           {
             path: '/index/shijuan/shenhezhong',
@@ -65,7 +59,7 @@ const routes = [
       {
         path: '/index/school',
         name: 'school',
-        component: () => import('../views/school/index'),
+        component: () => import('../views/school/indexs'),
         title: '学校管理',
         author: [50, 51, 52],
         children: [
@@ -100,6 +94,12 @@ const router = new VueRouter({
   mode: 'history',
   base: '/demozlc',
   routes,
+});
+router.beforeEach((to, from, next) => {
+  if (to.meta.keepAlive) {
+    store.commit('addKeepAlive', to.name);
+  }
+  next();
 });
 
 export default router;

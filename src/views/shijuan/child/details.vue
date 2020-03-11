@@ -1,12 +1,21 @@
 <template>
     <div>
-      1213
+       {{$route.params.id}}
     </div>
 </template>
 
 <script>
+
+import { mapMutations } from 'vuex';
+
 export default {
   name: 'details',
+  methods: {
+    ...mapMutations(['addKeepAlive']),
+  },
+  created() {
+    this.addKeepAlive('daitishen');
+  },
 };
 </script>
 

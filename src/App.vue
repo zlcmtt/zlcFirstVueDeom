@@ -1,12 +1,10 @@
 <template>
   <div id="app">
-    <router-view v-if="!$route.meta.keepAlive"/>
-    <keep-alive>
-      <router-view v-if="$route.meta.keepAlive"/>
-    </keep-alive>
+    <router-view ></router-view>
   </div>
 </template>
 <script>
+
 export default {
   methods: {
     computeAdaptive() {
@@ -30,9 +28,8 @@ export default {
       document.documentElement.style.fontSize = `${newSize}px`;
     },
   },
-  created() {
-    this.computeAdaptive();
-  },
+  created() {},
+  computed: {},
 };
 </script>
 
