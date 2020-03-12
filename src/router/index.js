@@ -31,6 +31,7 @@ const routes = [
             author: [50, 51],
             meta: {
               keepAlive: true,
+              navName: ['试卷管理', '待提审试卷'],
             },
           },
           {
@@ -39,6 +40,9 @@ const routes = [
             component: () => import('../views/shijuan/child/details'),
             title: '详情',
             author: [],
+            meta: {
+              navName: ['试卷管理', '待提审试卷', '详情'],
+            },
           },
           {
             path: '/index/shijuan/shenhezhong',
@@ -46,6 +50,9 @@ const routes = [
             component: () => import('../views/shijuan/shenhezhong'),
             title: '审核中试卷',
             author: [50, 51],
+            meta: {
+              navName: ['试卷管理', '审核中试卷'],
+            },
           },
           {
             path: '/index/shijuan/bohui',
@@ -53,6 +60,9 @@ const routes = [
             component: () => import('../views/shijuan/bohui'),
             title: '被驳回试卷',
             author: [50, 51],
+            meta: {
+              navName: ['试卷管理', '被驳回试卷'],
+            },
           },
         ],
       },
@@ -69,6 +79,9 @@ const routes = [
             component: () => import('../views/school/guanli'),
             title: '学校管理员',
             author: [50, 51, 52],
+            meta: {
+              navName: ['学校管理', '学校管理员'],
+            },
           },
           {
             path: '/index/school/liebiao',
@@ -76,6 +89,9 @@ const routes = [
             component: () => import('../views/school/liebiao'),
             title: '学校列表',
             author: [50, 51, 52],
+            meta: {
+              navName: ['学校管理', '学校列表'],
+            },
           },
           {
             path: '/index/school/work',
@@ -83,6 +99,9 @@ const routes = [
             component: () => import('../views/school/work'),
             title: '布置作业',
             author: [50, 51],
+            meta: {
+              navName: ['学校管理', '布置作业'],
+            },
           },
         ],
       },

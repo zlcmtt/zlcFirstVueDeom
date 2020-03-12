@@ -20,6 +20,7 @@
         </el-menu>
       </el-aside>
       <el-main>
+          <NavBar/>
           <router-view></router-view>
       </el-main>
     </el-container>
@@ -29,6 +30,7 @@
 <script>
 import { mapState } from 'vuex';
 import router from '../router/index';
+import NavBar from './NavBar';
 
 export default {
   name: 'index',
@@ -45,6 +47,9 @@ export default {
   },
   created() {
     this.routerList = router.options.routes[1].children;
+  },
+  components: {
+    NavBar,
   },
 };
 </script>
@@ -73,6 +78,7 @@ export default {
     color: #333;
     text-align: center;
     line-height: 160px;
-    overflow: auto;
+    overflow: hidden;
+    padding: 0 20px 20px 20px;
   }
 </style>
