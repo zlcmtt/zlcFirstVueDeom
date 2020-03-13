@@ -1,5 +1,7 @@
 module.exports = {
   publicPath: '/demozlc/',
+  assetsDir: 'static',
+  integrity: true,
   devServer: {
     open: true,
     proxy: {

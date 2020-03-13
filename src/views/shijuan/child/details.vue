@@ -9,7 +9,7 @@
 import { mapMutations } from 'vuex';
 
 export default {
-  name: 'details',
+  name: 'datishendetails',
   methods: {
     ...mapMutations(['addKeepAlive']),
   },

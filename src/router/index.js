@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 // eslint-disable-next-line import/extensions
 import Login from '../views/Login';
 import store from '../store/index';
+import Error from '../views/Error';
 
 Vue.use(VueRouter);
 const routes = [
@@ -106,6 +107,11 @@ const routes = [
         ],
       },
     ],
+  },
+  {
+    path: '*',
+    name: 'Error',
+    component: Error,
   },
 ];
 
