@@ -53,7 +53,7 @@ export default {
       text-align: center !important;
     }
     .has-gutter {
-      line-height: 100px !important;
+      line-height: 3rem !important;
     }
 }
 </style>

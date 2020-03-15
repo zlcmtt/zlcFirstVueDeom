@@ -78,7 +78,7 @@ export default {
     color: #333;
     text-align: center;
     line-height: 160px;
-    overflow: hidden;
-    padding: 0 20px 20px 20px;
+    padding: 0 1rem 1rem 1rem;
+    overflow: auto;
   }
 </style>
