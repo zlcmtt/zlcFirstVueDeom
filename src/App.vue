@@ -63,4 +63,7 @@ html {
     }
   }
 }
+  li{
+    list-style: none;
+  }
 </style>

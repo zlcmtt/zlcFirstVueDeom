@@ -81,7 +81,18 @@ const routes = [
             title: '学校管理员',
             author: [50, 51, 52],
             meta: {
+              keepAlive: true,
               navName: ['学校管理', '学校管理员'],
+            },
+          },
+          {
+            path: '/index/school/guanli/:num',
+            name: 'guanliDetails',
+            component: () => import('../views/school/guanliDetails'),
+            title: '详情',
+            author: [],
+            meta: {
+              navName: ['学校管理', '学校管理员', '详情'],
             },
           },
           {
@@ -119,6 +130,16 @@ const router = new VueRouter({
   mode: 'history',
   base: '/demozlc',
   routes,
+  // scrollBehavior(to, from, savedPosition) {
+  //   console.log(savedPosition);
+  //   if (to.name === 'guanli') {
+  //     if (savedPosition) {
+  //       return savedPosition;
+  //     }
+  //     return { x: 0, y: 0 };
+  //   }
+  //   return { x: 0, y: 0 };
+  // },
 });
 router.beforeEach((to, from, next) => {
   if (to.meta.keepAlive) {
