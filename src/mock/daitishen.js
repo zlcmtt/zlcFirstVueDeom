@@ -7,3 +7,7 @@ Mock.mock('http:127.0.0.1/getListwork', {
     address: '@county(true)',
   }],
 });
+
+Mock.mock('https://jsonplaceholder.typicode.com/posts/', {
+  id: '@id()',
+});

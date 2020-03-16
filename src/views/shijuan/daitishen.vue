@@ -30,10 +30,7 @@ export default {
     };
   },
   created() {
-    this.Axios.get('http:127.0.0.1/getListwork').then((res) => {
-      this.tableData = res.data.list;
-      this.currentTableData = this.tableData.slice((this.currentPage - 1) * 10, this.currentPage * 10);
-    });
+    this.getData();
   },
   activated() {},
   computed: {},
@@ -45,6 +42,15 @@ export default {
     changeSize(size) {
       this.currentPage = size;
       this.currentTableData = this.tableData.slice((this.currentPage - 1) * 10, this.currentPage * 10);
+    },
+    async getData() {
+      try {
+        const { data } = await this.Axios.get('http:127.0.0.1/getListwork');
+        this.tableData = data.list;
+        this.currentTableData = this.tableData.slice((this.currentPage - 1) * 10, this.currentPage * 10);
+      } catch (e) {
+        console.log(e);
+      }
     },
   },
   beforeRouteLeave(to, from, next) {

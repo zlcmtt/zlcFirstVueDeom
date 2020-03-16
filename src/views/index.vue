@@ -1,5 +1,5 @@
 <template>
-  <el-container>
+  <el-container class="container">
     <el-header>Header</el-header>
     <el-container>
       <el-aside width="200px">
@@ -55,30 +55,29 @@ export default {
 </script>
 
 <style scoped lang="less">
-  .el-container{
+  .container{
     height: 100%;
     width: 100%;
-  }
-  .el-header, .el-footer {
-    background-color: #B3C0D1;
-    color: #333;
-    text-align: center;
-    line-height: 60px;
-  }
+    .el-header, .el-footer {
+      background-color: #B3C0D1;
+      color: #333;
+      text-align: center;
+      line-height: 60px;
+    }
 
-  .el-aside {
-    background-color: #D3DCE6;
-    color: #333;
-    text-align: center;
-    line-height: 200px;
-  }
+    .el-aside {
+      background-color: #D3DCE6;
+      color: #333;
+      text-align: center;
+      line-height: 200px;
+    }
 
-  .el-main {
-    background-color: #E9EEF3;
-    color: #333;
-    text-align: center;
-    line-height: 160px;
-    padding: 0 1rem 1rem 1rem;
-    overflow: auto;
+    .el-main {
+      background-color: #E9EEF3;
+      color: #333;
+      text-align: center;
+      padding: 0 1rem 1rem 1rem;
+      overflow: auto;
+    }
   }
 </style>
