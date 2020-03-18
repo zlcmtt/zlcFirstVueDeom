@@ -1,13 +1,11 @@
 import Vue from 'vue';
 import ElementUI from 'element-ui';
 import axios from 'axios';
-// eslint-disable-next-line import/extensions
-import App from './App.vue';
+import VueVideoPlayer from 'vue-video-player';
 import router from './router';
 import store from './store';
+import App from './App.vue';
 import './mock/daitishen';
-// eslint-disable-next-line import/order
-import VueVideoPlayer from 'vue-video-player';
 import 'video.js/dist/video-js.css';
 
 Vue.use(VueVideoPlayer);

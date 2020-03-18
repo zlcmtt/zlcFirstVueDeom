@@ -28,7 +28,9 @@ export default {
       document.documentElement.style.fontSize = `${newSize}px`;
     },
   },
-  created() { },
+  created() {
+    this.computeAdaptive();
+  },
   computed: {},
 };
 </script>
