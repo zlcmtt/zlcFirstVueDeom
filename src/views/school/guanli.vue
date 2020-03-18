@@ -19,7 +19,6 @@ export default {
   methods: {
     load() {
       this.count += 2;
-      this.scrollTop = this.$refs.infiniteList.scrollTop;
     },
     toDetails(val) {
       this.$router.push({ path: `/index/school/guanli/${val}` });
@@ -38,7 +37,7 @@ export default {
   },
   mounted() {},
   activated() {
-    this.$refs.infiniteList.scrollTo({ top: this.scrollTop });
+    this.$refs.infiniteList.scrollTop = this.scrollTop ;
   },
 };
 </script>

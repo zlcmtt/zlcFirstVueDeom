@@ -18,5 +18,6 @@ module.exports = {
       vue: 'never'
     }],
     'max-len': 0,
+    'linebreak-style':0,
   },
 };
